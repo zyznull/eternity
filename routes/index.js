@@ -2,16 +2,10 @@ var express = require('express');
 var router = express.Router();
 var path = require('path')
 
-
+/* 首页*/
 router.get('',function (req,res,next) {
-	next();
-})
-
-/* 首页 */
-router.get('/', function(req, res, next) {
 	res.sendFile(path.resolve(__dirname,'../views/index.html'));
-});
-
+})
 
 /* LoveRecord */
 router.get('/love-record', function(req, res, next) {

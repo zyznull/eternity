@@ -9,7 +9,7 @@ var cookieParser = require('cookie-parser');
 
 var routes = require('./routes/index');
 var admin = require('./routes/admin');
-
+var loveRecord = require('./routes/love-record');
 var app = express();
 
 
@@ -36,19 +36,20 @@ app.use(session({
   saveUninitialized: false,
   secret: 'love'
 }));
-app.use(function(req, res, next) {
-  if (!req.session.user) {
-    if (req.url.indexOf("admin/") > -1) {
-      res.redirect('/eternity/admin');
-    } else if (req.url.indexOf("admin") > -1) {
-      next();
-    }
-  } else{
-    next();
-  }
-});
+// app.use(function(req, res, next) {
+//   if (!req.session.user) {
+//     if (req.url.indexOf("admin/") > -1) {
+//       res.redirect('/eternity/admin');
+//     } else if (req.url.indexOf("admin") > -1) {
+//       next();
+//     }
+//   } else{
+//     next();
+//   }
+// });
 app.use('/eternity', routes);
 app.use('/eternity/admin', admin);
+app.use('/eternity/love-record',loveRecord);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -11,8 +11,8 @@
 <body>
     <div class="config-div panel panel-default">
         <h1 class="config-h1">*LoveRecord Config</h1>
-        <div class="panel panel-default">
-            <div class="panel-heading" class="config-title">
+        <div class="panel panel-default" style="border:none">
+            <div class="panel-heading config-title" style="background-color:#fff">
                 <h4 class="panel-title">
 				<a data-toggle="collapse" data-parent="#accordion" 
 				   href="#collapseTwo">
@@ -35,7 +35,7 @@
     <script type="text/javascript" src="/javascripts/jquery-1.12.2.min.js"></script>
     <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
     <script type="text/javascript">
-    $.get('/eternity/admin/love-record/says', function(data) {
+    $.get('/eternity/love-record/says', function(data) {
         data.split('\n').map(function(i) {
             if (i != '')
                 $('#says').append('<p class="say">' + i + '</p>');
