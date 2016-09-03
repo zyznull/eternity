@@ -5,7 +5,7 @@ var path = require('path')
 /* 首页*/
 router.get('',function (req,res,next) {
 	res.sendFile(path.resolve(__dirname,'../views/index.html'));
-})
+});
 
 /* LoveRecord */
 router.get('/love-record', function(req, res, next) {
@@ -14,7 +14,7 @@ router.get('/love-record', function(req, res, next) {
 
 
 /* 管理员页面 */
-router.get('/admin', function(req, res, next) {
+router.get('/admin', function(req, res) {
 	res.sendFile(path.resolve(__dirname,'../views/admin/login.html'));
 });
 

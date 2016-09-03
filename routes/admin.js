@@ -18,7 +18,7 @@ router.post('', function (req, res) {
     var name = req.body.username;
     var password = req.body.password;
 
-    if (name == 'zhuang' && password == '123123') {
+    if (name == 'a91a40e109ec4e22c476f298a01940f1' && password == 'b696477b266f97e5de2e28f0640f88cc') {
         var user = {
             'username': 'love'
         };
