@@ -64,7 +64,6 @@
 
         //异步获取所有语句
         $.get('/eternity/love-record/says', function (data) {
-            debugger;
             var index = 0;
             $('#say').text(data[(index++) % data.length]);
             setInterval(function () {

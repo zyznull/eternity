@@ -15,7 +15,11 @@ router.get('/says', function (req, res) {
     var says = new Array();
     file.read(path.resolve(__dirname, '../public/config/says.txt'), function (data) {
         data.split("\n").map(function (i) {
-            says.push(i);
+            //最后一句
+            if (i == "")
+                says.push("时间不停，爱你不止，携子之手，白头偕老");
+            else
+                says.push(i);
         });
         res.json(says);
     });
@@ -42,7 +46,7 @@ router.get('/imgs', function (req, res) {
     });
 
     //加入前缀
-    for(var i in imgs){
+    for (var i in imgs) {
         imgs[i] = '/images/love-record/' + imgs[i];
     }
     res.json(imgs);
