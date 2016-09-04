@@ -10,6 +10,11 @@ function read(src, callback) {
 	});
 }
 
+function readSync(src) {
+	var data = fs.readFileSync(src);
+	return data.toString();
+}
+
 function write(src, content) {
 	fs.writeFile(src, content, function(err) {
 		if (err) {
@@ -28,24 +33,22 @@ function append(src, content) {
 	});
 }
 
-//TODO 读取文件测试
-function readProperties(src) {
-	read(src,function (data) {
-		var obj = new Object();
-		data.map(function (i) {
-			//跳过注释
-			if(i.indexOf("#") == -1){
-				var temp = i.split("=");
-				if(temp.length == 2){
-					obj[temp[0]] = temp[1];
-				}
+function readPropertiesSync(src) {
+	var data = readSync(src);
+    var obj = new Object();
+	data.split("\n").map(function (i) {
+		//跳过注释
+		if (i.indexOf("#") == -1) {
+			var temp = i.split("=");
+			if (temp.length == 2) {
+				obj[temp[0]] = temp[1];
 			}
-		});
-		return obj;
+		}
 	});
+	return obj;
 }
 
 exports.read = read;
 exports.write = write;
 exports.append = append;
-exports.readProperties = readProperties;
+exports.readPropertiesSync = readPropertiesSync;
