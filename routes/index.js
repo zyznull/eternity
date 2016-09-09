@@ -4,18 +4,19 @@ var path = require('path')
 
 /* 首页*/
 router.get('',function (req,res,next) {
-	res.sendFile(path.resolve(__dirname,'../views/index.html'));
+	res.render(path.resolve(__dirname,'../views/index.jade'));
+	// res.sendFile(path.resolve(__dirname,'../views/index.html'));
 });
 
 /* LoveRecord */
 router.get('/love-record', function(req, res, next) {
-	res.sendFile(path.resolve(__dirname,'../views/love-record/index.html'));
+	res.render(path.resolve(__dirname,'../views/love-record/index.jade'));
 });
 
 
 /* 管理员页面 */
 router.get('/admin', function(req, res) {
-	res.sendFile(path.resolve(__dirname,'../views/admin/login.html'));
+	res.render(path.resolve(__dirname,'../views/admin/login.jade'));
 });
 
 module.exports = router;
