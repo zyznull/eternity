@@ -19,4 +19,8 @@ router.get('/admin', function(req, res) {
 	res.render(path.resolve(__dirname,'../views/admin/login.jade'));
 });
 
+router.get('/kit',function(req,res){
+	res.render(path.resolve(__dirname,'../views/super-tool-kit/science.jade'));
+});
+
 module.exports = router;
