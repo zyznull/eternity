@@ -46,7 +46,7 @@ npm install
 
 ``` bash
 #启动程序，默认端口3000
-nohup node start &
+nohup npm start &
 ```
 
 ## 结语
