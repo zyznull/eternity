@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
-
+var http = require('http');
 var routes = require('./routes/index');
 var admin = require('./routes/admin');
 var loveRecord = require('./routes/love-record');
@@ -74,6 +74,14 @@ app.use(function (err, req, res, next) {
         message: err.message,
         error: {}
     });
+});
+
+
+//start
+app.set('port', process.env.PORT || 3300);
+http.createServer(app).listen(app.get('port'),
+  function(){
+    console.log("Express server listening on port " + app.get('port'));
 });
 
 

@@ -36,7 +36,7 @@ router.post('', function (req, res) {
 
 /* 管理员页面 */
 router.get('/index', function (req, res) {
-    res.sendFile(path.resolve(__dirname, '../views/admin/index.html'));
+    res.render(path.resolve(__dirname, '../views/admin/index.jade'));
 });
 
 
